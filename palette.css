@@ -513,3 +513,42 @@ main > .trust {
 .hero-shell .hero-art .shape-back {
   opacity: .54;
 }
+
+/* V9 — Elimina o contorno escuro e a emenda na base da moldura. */
+.hero-shell .hero-art .elisa-photo-frame {
+  background: linear-gradient(180deg,#416158 0%,#416158 40%,#638477 61%,var(--brand-mint) 78%,var(--brand-mint) 100%);
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.hero-shell .elisa-photo-frame .portrait-label {
+  background: var(--brand-mint);
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  border-radius: 0;
+  width: calc(100% + 4px);
+  max-width: none;
+  margin-inline: -2px;
+  margin-bottom: -2px;
+}
+.hero-shell .elisa-photo-frame .elisa-front-wave {
+  left: -2px;
+  width: calc(100% + 4px);
+  bottom: calc(100% - 3px);
+  stroke: none;
+  filter: none;
+}
+.hero-shell .hero-art .shape-back {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  filter: none;
+}
