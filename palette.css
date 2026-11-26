@@ -90,42 +90,6 @@
   z-index: 1;
 }
 
-/* Máscara frontal orgânica */
-
-.hero-shell .portrait-provisional.elisa-hero-photo::after {
-  content: "";
-  position: absolute;
-  left: -3%;
-  right: -3%;
-  bottom: -2%;
-  height: 22%;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--brand-magenta) 90%
-  );
-  border-radius: 50% 50% 15% 15%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Suavização da borda lateral e inferior */
-
-.hero-shell .portrait-provisional.elisa-hero-photo img {
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 83%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 83%,
-    transparent 100%
-  );
-}
-
 /* Identificação da médica */
 
 .hero-shell .hero-art .portrait-label {
@@ -351,12 +315,7 @@ main > .trust {
     max-width: 370px;
   }
 
-  .hero-shell .portrait-provisional.elisa-hero-photo::after {
-    height: 22%;
-    bottom: -2%;
-  }
-
-  .hero-shell .hero-art .portrait-label {
+.hero-shell .hero-art .portrait-label {
     padding: 8px 14px;
     margin-top: -10px;
   }
@@ -442,30 +401,78 @@ main > .trust {
   }
 }
 
-/* V13.1 Elisa — acabamento frontal do recorte, sem alterar a fotografia. */
-.hero-shell .portrait-provisional.elisa-hero-photo img {
-  -webkit-mask-image: linear-gradient(to bottom,#000 0%,#000 76%,transparent 97%), linear-gradient(to right,transparent 0%,#000 14%,#000 79%,transparent 95%) !important;
-  -webkit-mask-composite: source-in !important;
-  mask-image: linear-gradient(to bottom,#000 0%,#000 76%,transparent 97%), linear-gradient(to right,transparent 0%,#000 14%,#000 79%,transparent 95%) !important;
-  mask-composite: intersect !important;
-  mask-repeat: no-repeat !important;
-  mask-size: 100% 100% !important;
+
+/* V13.1 — Retrato editorial: moldura contínua e base frontal em sálvia. */
+.hero-shell .hero-art .shape-back {
+  background: var(--brand-mint);
+  background-image: none;
+  opacity: .72;
+  box-shadow: none;
+  inset: 8% 0 4%;
+  transform: rotate(-6deg);
 }
-.hero-shell .portrait-provisional.elisa-hero-photo::after {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: auto -2% -1% -2%;
-  height: 18%;
-  background: linear-gradient(180deg, transparent, #36534a 88%);
-  border-radius: 50% 50% 24px 24px / 70% 70% 24px 24px;
-  pointer-events: none;
-  z-index: 2;
+.hero-shell .hero-art .elisa-photo-frame {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 485px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 48% 48% 27% 27% / 40% 40% 20% 20%;
+  background: radial-gradient(ellipse at 18% 12%, #698078 0%, #416158 50%, #36594e 100%);
+  box-shadow: 0 15px 34px rgb(52 76 69 / .14);
+  z-index: 1;
 }
-.hero-shell .hero-art .portrait-label {
-  margin-top: -5%;
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 0;
   background: transparent;
   box-shadow: none;
+  overflow: hidden;
+  align-self: stretch;
+}
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo::before,
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo::after { content: none; display: none; }
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo img {
+  width: 100%; height: 100%; max-width: none;
+  object-fit: contain; object-position: center bottom;
+  -webkit-mask-image: none; mask-image: none;
+  filter: none; transform: none;
+}
+.hero-shell .elisa-photo-frame .portrait-label {
   position: relative;
   z-index: 3;
+  margin: -15% 0 0;
+  padding: 10px 22px 32px;
+  min-height: 90px;
+  width: 100%; max-width: none;
+  border-radius: 0;
+  background: var(--brand-mint);
+  color: var(--ink);
+  box-shadow: none;
+  text-align: center;
+}
+.hero-shell .elisa-photo-frame .elisa-front-wave {
+  position: absolute;
+  left: 0; bottom: calc(100% - 1px);
+  width: 100%; height: auto; aspect-ratio: 10/1;
+  color: var(--brand-mint);
+  pointer-events: none;
+  stroke: none;
+}
+.hero-shell .elisa-photo-frame .portrait-label strong { font-size: clamp(16px, 2vw, 20px); }
+.hero-shell .elisa-photo-frame .portrait-label small { font-size: 13px; }
+@media (max-width: 800px) {
+  .hero-shell .hero-art .elisa-photo-frame { max-width: 370px; }
+  .hero-shell .elisa-photo-frame .portrait-label { min-height: 76px; padding: 8px 18px 23px; }
+}
+@media (max-width: 480px) {
+  .hero-shell .hero-art .elisa-photo-frame { max-width: 340px; }
+  .hero-shell .elisa-photo-frame .portrait-label { min-height: 68px; padding: 7px 12px 20px; }
 }
