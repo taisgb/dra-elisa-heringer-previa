@@ -1,19 +1,443 @@
-/* Paleta provisória da Dra. Elisa; identidade oficial pendente. */
-:root{--brand-magenta:#36594e;--brand-turquoise:#dce8dc;--brand-yellow:#f0dfb5;--brand-blue:#698c91;--brand-coral:#e6b7a5;--brand-mint:#b5c9bc;--brand-sky:#dce6ed;--bg:#f7f2e9;--paper:#fffdf9;--ink:#344c45;--muted:#52675f;--green:var(--brand-magenta);--sage:#dce8dc;--rose:#95573f;--line:#dde5dc;--primary-hover:#29483d;--focus:#95573f;--dot:#95573f;--shape:#b5c9bc;--portrait:#f7f2e9;--ornament:#36594e;--ornament-dot:#95573f;--rating:#926208;--section:#fffdf9;--stage-one:#e9c4b5;--stage-two:#f4e4be;--stage-three:#dce8dc;--stage-four:#dce6ed;--stage-ink:#344c45;--stage-border:#82968b;--about-bg:#dce8dc;--photo-tag:#fffdf9f5;--process:#e6eee5;--process-border:#b5c9bc;--gallery:#dce6ed;--review:#f4e3d9;--review-border:#e6b7a5;--on-primary:#fff;--on-primary-soft:#f0dfb5;--on-primary-text:#e9f1e8;--light-hover:#f0dfb5;--outline-hover:#29483d;--footer:#e6eee5;--allo:Allo,'DM Sans',Arial,sans-serif;--body:'DM Sans',Arial,sans-serif}
-main > .trust{background-color:var(--brand-turquoise)}
-.hero-shell .portrait-provisional.no-photo .photo-fallback svg{width:clamp(80px,12vw,140px);height:auto;color:var(--green);stroke-width:1.1}
-.about-placeholder{display:grid;place-content:center;justify-items:center;gap:14px;min-height:400px;background:radial-gradient(ellipse at 25% 20%,var(--paper),var(--about-bg));color:var(--green);font:650 72px/1 var(--allo)}
-.about-placeholder svg{width:82px;height:82px;stroke-width:1.1}
-.elisa-location{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:22px;align-items:stretch}.elisa-location .unit-card{text-align:center;align-items:center}.elisa-location .unit-actions{align-items:center;justify-content:center}.elisa-location iframe{width:100%;height:100%;min-height:320px;border:0;border-radius:28px;background:var(--about-bg)}
-@media(max-width:800px){.elisa-location{grid-template-columns:1fr}.elisa-location iframe{min-height:260px}.about-placeholder{min-height:300px}}
 
+/* Identidade visual — Dra. Elisa Heringer */
 
-/* Contatos em texto, sem cards, com mapa lateral. */
-.elisa-contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:stretch}.elisa-contact-text{min-width:0}.elisa-contact-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;padding:24px 0;border-bottom:1px solid var(--line)}.elisa-contact-row:first-child{padding-top:0}.elisa-contact-row:last-child{border-bottom:0}.elisa-contact-row h3{display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:24px}.elisa-contact-row h3 svg{color:var(--green)}.elisa-contact-row p{margin:0 0 6px;color:var(--muted);font-size:15px}.elisa-phone{font-weight:600;display:inline-block;padding-block:4px;color:var(--green);font-size:18px}.elisa-contact-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.elisa-contact-actions .btn{font-size:14px}.elisa-map{display:block;width:100%;height:100%;min-height:300px;border:0;border-radius:28px;background:var(--about-bg);margin:0}.review-rating .social-handle{overflow-wrap:anywhere;font-size:clamp(21px,3vw,32px)}@media(max-width:800px){.elisa-contact-layout{grid-template-columns:1fr;gap:20px}.elisa-contact-row{justify-content:flex-start}.elisa-map{min-height:260px;height:260px}}@media(max-width:480px){.elisa-contact-row{flex-direction:column;align-items:stretch}.elisa-contact-actions{justify-content:flex-start}.elisa-contact-actions .btn{max-width:100%}}
+:root {
+  --brand-magenta: #36594e;
+  --brand-turquoise: #dce8dc;
+  --brand-yellow: #f0dfb5;
+  --brand-blue: #698c91;
+  --brand-coral: #e6b7a5;
+  --brand-mint: #b5c9bc;
+  --brand-sky: #dce6ed;
 
-/* Retratos transparentes: preserva a composição e evita cortes nas bordas. */
-.hero-shell .portrait-provisional.elisa-hero-photo{width:100%;max-width:470px;aspect-ratio:1;overflow:visible;border-radius:0;background:transparent;box-shadow:none;position:relative;z-index:1;align-self:end}
-.hero-shell .portrait-provisional.elisa-hero-photo img{display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center bottom;filter:none}
-.hero-shell .hero-art .portrait-label{margin-top:0;z-index:2;color:var(--on-primary);background:var(--green);border-radius:18px;padding:10px 18px;justify-self:center;max-width:100%}
-.about-refined .about-portrait img.elisa-about-photo{width:100%;height:auto;aspect-ratio:1;object-fit:contain;object-position:center bottom;background:var(--about-bg);filter:none}
-@media(max-width:800px){.hero-shell .portrait-provisional.elisa-hero-photo{max-width:370px}.hero-shell .hero-art .portrait-label{padding:8px 14px}.hero-shell .hero-art .shape-back{inset:10% 2% 5%}}
+  --bg: #f7f2e9;
+  --paper: #fffdf9;
+  --ink: #344c45;
+  --muted: #52675f;
+  --green: var(--brand-magenta);
+  --sage: #dce8dc;
+  --rose: #95573f;
+  --line: #dde5dc;
+
+  --primary-hover: #29483d;
+  --focus: #95573f;
+  --dot: #95573f;
+  --shape: #b5c9bc;
+  --portrait: #f7f2e9;
+  --ornament: #36594e;
+  --ornament-dot: #95573f;
+  --rating: #926208;
+  --section: #fffdf9;
+
+  --stage-one: #e9c4b5;
+  --stage-two: #f4e4be;
+  --stage-three: #dce8dc;
+  --stage-four: #dce6ed;
+  --stage-ink: #344c45;
+  --stage-border: #82968b;
+
+  --about-bg: #dce8dc;
+  --photo-tag: #fffdf9f5;
+  --process: #e6eee5;
+  --process-border: #b5c9bc;
+  --gallery: #dce6ed;
+  --review: #f4e3d9;
+  --review-border: #e6b7a5;
+
+  --on-primary: #fff;
+  --on-primary-soft: #f0dfb5;
+  --on-primary-text: #e9f1e8;
+  --light-hover: #f0dfb5;
+  --outline-hover: #29483d;
+  --footer: #e6eee5;
+
+  --allo: Allo, "DM Sans", Arial, sans-serif;
+  --body: "DM Sans", Arial, sans-serif;
+}
+
+/* =====================================
+   HERO — COMPOSIÇÃO E FOTOGRAFIA
+   ===================================== */
+
+.hero-shell .hero-art {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-shell .portrait-provisional.elisa-hero-photo {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 470px;
+  aspect-ratio: 1;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: 1;
+  align-self: end;
+}
+
+.hero-shell .portrait-provisional.elisa-hero-photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: none;
+  z-index: 1;
+}
+
+/* Máscara frontal orgânica */
+
+.hero-shell .portrait-provisional.elisa-hero-photo::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  right: -3%;
+  bottom: -2%;
+  height: 22%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--brand-magenta) 90%
+  );
+  border-radius: 50% 50% 15% 15%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Suavização da borda lateral e inferior */
+
+.hero-shell .portrait-provisional.elisa-hero-photo img {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 83%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 83%,
+    transparent 100%
+  );
+}
+
+/* Identificação da médica */
+
+.hero-shell .hero-art .portrait-label {
+  position: relative;
+  margin-top: -12px;
+  z-index: 3;
+  color: var(--on-primary);
+  background: var(--green);
+  border-radius: 18px;
+  padding: 10px 18px;
+  justify-self: center;
+  max-width: 100%;
+  text-align: center;
+}
+
+.portrait-label strong,
+.portrait-label small {
+  display: block;
+}
+
+/* Elementos decorativos */
+
+.hero-shell .hero-art .hero-rays,
+.hero-shell .hero-art .hero-heart {
+  z-index: 4;
+  pointer-events: none;
+  filter: none;
+}
+
+.hero-shell .hero-art .hero-rays {
+  color: var(--brand-yellow);
+}
+
+.hero-shell .hero-art .hero-heart {
+  color: var(--brand-coral);
+}
+
+.hero-shell .hero-wave {
+  color: var(--brand-turquoise);
+}
+
+/* =====================================
+   CREDENCIAIS
+   ===================================== */
+
+main > .trust {
+  background-color: var(--brand-turquoise);
+}
+
+/* =====================================
+   SEÇÃO SOBRE
+   ===================================== */
+
+.about-refined .about-portrait img.elisa-about-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center bottom;
+  background: var(--about-bg);
+  filter: none;
+}
+
+/* Espaços reservados para imagens */
+
+.hero-shell .portrait-provisional.no-photo .photo-fallback svg {
+  width: clamp(80px, 12vw, 140px);
+  height: auto;
+  color: var(--green);
+  stroke-width: 1.1;
+}
+
+.about-placeholder {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  min-height: 400px;
+  background: radial-gradient(
+    ellipse at 25% 20%,
+    var(--paper),
+    var(--about-bg)
+  );
+  color: var(--green);
+  font: 650 72px/1 var(--allo);
+}
+
+.about-placeholder svg {
+  width: 82px;
+  height: 82px;
+  stroke-width: 1.1;
+}
+
+/* =====================================
+   LOCAIS DE ATENDIMENTO
+   Contatos em texto, sem cards
+   ===================================== */
+
+.elisa-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: stretch;
+}
+
+.elisa-contact-text {
+  min-width: 0;
+}
+
+.elisa-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.elisa-contact-row:first-child {
+  padding-top: 0;
+}
+
+.elisa-contact-row:last-child {
+  border-bottom: 0;
+}
+
+.elisa-contact-row h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.elisa-contact-row h3 svg {
+  color: var(--green);
+}
+
+.elisa-contact-row p {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.elisa-phone {
+  display: inline-block;
+  padding-block: 4px;
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.elisa-contact-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.elisa-contact-actions .btn {
+  font-size: 14px;
+}
+
+/* Mapa */
+
+.elisa-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+  border-radius: 28px;
+  background: var(--about-bg);
+  margin: 0;
+}
+
+/* Compatibilidade com a estrutura anterior */
+
+.elisa-location {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.elisa-location .unit-card {
+  text-align: center;
+  align-items: center;
+}
+
+.elisa-location .unit-actions {
+  align-items: center;
+  justify-content: center;
+}
+
+.elisa-location iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: 28px;
+  background: var(--about-bg);
+}
+
+/* =====================================
+   INSTAGRAM
+   ===================================== */
+
+.review-rating .social-handle {
+  overflow-wrap: anywhere;
+  font-size: clamp(21px, 3vw, 32px);
+}
+
+/* =====================================
+   RESPONSIVIDADE — TABLET E MOBILE
+   ===================================== */
+
+@media (max-width: 800px) {
+
+  .hero-shell .portrait-provisional.elisa-hero-photo {
+    max-width: 370px;
+  }
+
+  .hero-shell .portrait-provisional.elisa-hero-photo::after {
+    height: 22%;
+    bottom: -2%;
+  }
+
+  .hero-shell .hero-art .portrait-label {
+    padding: 8px 14px;
+    margin-top: -10px;
+  }
+
+  .hero-shell .hero-art .shape-back {
+    inset: 10% 2% 5%;
+  }
+
+  .elisa-contact-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .elisa-contact-row {
+    justify-content: flex-start;
+  }
+
+  .elisa-map {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .elisa-location {
+    grid-template-columns: 1fr;
+  }
+
+  .elisa-location iframe {
+    min-height: 260px;
+  }
+
+  .about-placeholder {
+    min-height: 300px;
+  }
+}
+
+/* Smartphones */
+
+@media (max-width: 480px) {
+
+  .hero-shell .portrait-provisional.elisa-hero-photo {
+    max-width: 340px;
+  }
+
+  .hero-shell .hero-art .portrait-label {
+    font-size: 13px;
+  }
+
+  .elisa-contact-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .elisa-contact-actions {
+    justify-content: flex-start;
+  }
+
+  .elisa-contact-actions .btn {
+    max-width: 100%;
+  }
+}
+
+/* Telas pequenas */
+
+@media (max-width: 360px) {
+
+  .hero-shell .portrait-provisional.elisa-hero-photo {
+    max-width: 290px;
+  }
+
+  .hero-shell .hero-art .portrait-label {
+    padding: 8px 12px;
+  }
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .elisa-hero-photo,
+  .elisa-hero-photo img {
+    animation: none;
+    transition: none;
+  }
+}
