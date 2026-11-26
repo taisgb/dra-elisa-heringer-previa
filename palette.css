@@ -476,3 +476,40 @@ main > .trust {
   .hero-shell .hero-art .elisa-photo-frame { max-width: 340px; }
   .hero-shell .elisa-photo-frame .portrait-label { min-height: 68px; padding: 7px 12px 20px; }
 }
+
+/* V8 — Transição cromática em camadas, sem máscara sobre o retrato. */
+.hero-shell .hero-art .elisa-photo-frame {
+  background: var(--brand-mint);
+  border: 0;
+  box-shadow: 0 12px 30px rgb(52 76 69 / .10);
+}
+.hero-shell .elisa-photo-frame .portrait-provisional.elisa-hero-photo {
+  background:
+    radial-gradient(ellipse at 16% 8%,rgb(255 255 255 / .16),transparent 55%),
+    linear-gradient(180deg,#416158 0%,#416158 46%,#55776a 72%,#88a497 100%);
+}
+.hero-shell .elisa-photo-frame .portrait-label {
+  margin-top: -13%;
+  background: var(--brand-mint);
+  padding-top: 8px;
+  border: 0;
+}
+.hero-shell .elisa-photo-frame .elisa-front-wave {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 480 / 64;
+  bottom: calc(100% - 2px);
+  overflow: visible;
+}
+.hero-shell .elisa-photo-frame .elisa-wave-middle {
+  fill: #91ad9e;
+  stroke: none;
+}
+.hero-shell .elisa-photo-frame .elisa-wave-front {
+  fill: var(--brand-mint);
+  stroke: none;
+}
+.hero-shell .hero-art .shape-back {
+  opacity: .54;
+}
