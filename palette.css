@@ -441,3 +441,31 @@ main > .trust {
     transition: none;
   }
 }
+
+/* V13.1 Elisa — acabamento frontal do recorte, sem alterar a fotografia. */
+.hero-shell .portrait-provisional.elisa-hero-photo img {
+  -webkit-mask-image: linear-gradient(to bottom,#000 0%,#000 76%,transparent 97%), linear-gradient(to right,transparent 0%,#000 14%,#000 79%,transparent 95%) !important;
+  -webkit-mask-composite: source-in !important;
+  mask-image: linear-gradient(to bottom,#000 0%,#000 76%,transparent 97%), linear-gradient(to right,transparent 0%,#000 14%,#000 79%,transparent 95%) !important;
+  mask-composite: intersect !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+}
+.hero-shell .portrait-provisional.elisa-hero-photo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: auto -2% -1% -2%;
+  height: 18%;
+  background: linear-gradient(180deg, transparent, #36534a 88%);
+  border-radius: 50% 50% 24px 24px / 70% 70% 24px 24px;
+  pointer-events: none;
+  z-index: 2;
+}
+.hero-shell .hero-art .portrait-label {
+  margin-top: -5%;
+  background: transparent;
+  box-shadow: none;
+  position: relative;
+  z-index: 3;
+}
